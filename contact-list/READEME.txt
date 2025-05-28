@@ -1,0 +1,3 @@
+1. Create a new file named appsettings.Development.json in the root directory of the project
+2. Copy appsettings.Development.example.json to appsettings.Development.json
+3. Replace the examples with your own server, user, password, database name

@@ -1,0 +1,79 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+th {
+    text-align: center !important;
+}
+
+    th:first-child {
+        text-align: left !important;
+    }
+    th:last-child {
+        white-space: nowrap;
+        width: 1%;
+    }
+
+td {
+    text-align: center !important;
+}
+
+    td:first-child {
+        text-align: left !important;
+    }
+
+    td:last-child {
+        text-align: left !important;
+    }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.field-validation-error {
+    font-size: 12px;
+}
+
+.btn-outline-success {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 1px;
+    padding: 0 4px;
+    font-size: 10px;
+    box-shadow: none !important;
+}
+
+.btn-outline-danger {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 1px;
+    padding: 0 4px;
+    font-size: 10px;
+    box-shadow: none !important;
+}
+
+#form-div {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}

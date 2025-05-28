@@ -1,0 +1,32 @@
+﻿@model ContactsList.Models.ContactsModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="text-center">
+    <h3>Edit @Model.Name contact info</h3>
+</div>
+
+<form id="form-div" asp-controller="Home" asp-action="Edit" method="post">
+	<input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" maxlength="13" />
+        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a role="button" class="btn btn-secondary" asp-controller="Home" asp-action="Index">Cancel</a>
+</form>

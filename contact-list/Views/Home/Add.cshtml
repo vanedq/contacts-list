@@ -1,0 +1,27 @@
+﻿@model ContactsList.Models.ContactsModel
+
+<div class="text-center">
+	<h1>Add new contact</h1>
+</div>
+
+<form id="form-div" asp-controller="Home" asp-action="Add" method="post">
+    <div class=" mb-3">
+        <label for="name">Name</label>
+        <input asp-for="Name" class="form-control">
+		@Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label for="phone">Phone</label>
+        <input type="tel" maxlength="13" pattern="[0-9]*" inputmode="numeric" input asp-for="Phone" class="form-control">
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })       
+    </div>
+    <div class="mb-3">
+        <label for="email">E-mail</label>
+        <input asp-for="Email" class="form-control">
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a role="button" class="btn btn-warning" asp-controller="Home" asp-action="Index">Back</a>
+
+</form>

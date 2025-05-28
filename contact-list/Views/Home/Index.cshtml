@@ -1,0 +1,61 @@
+﻿@model List<ContactsList.Models.ContactsModel>
+@{
+    ViewData["Title"] = "Contacts List";
+}
+
+<div>
+    <a role="button" class="btn btn-outline-primary" asp-controller="Home" asp-action="Add">
+        <i class="bi bi-plus-circle"> </i>Add New Contact 
+    </a>
+</div>
+<br>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn btn-outline-success">X</button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn btn-outline-danger">X</button>
+    </div>
+}
+
+<table class="table" id="contacts-table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">E-mail</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (ContactsModel contacts in Model)
+            {
+                <tr>
+                    <td id>@contacts.Name</td>
+                    <td>@contacts.Phone</td>
+                    <td>@contacts.Email</td>
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Actions">
+                            <a role="button" class="btn btn-outline-primary" asp-route-id="@contacts.Id" asp-controller="Home" asp-action="Edit">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a role="button" class="btn btn-outline-primary" asp-route-id="@contacts.Id" asp-controller="Home" asp-action="Delete">
+                                <i class="bi bi-trash3"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

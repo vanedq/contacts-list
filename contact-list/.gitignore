@@ -1,0 +1,2 @@
+# hide sensitive config
+appsettings.Development.json
