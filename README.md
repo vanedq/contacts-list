@@ -1,4 +1,4 @@
-# ASP.NET MVC project study
+# ASP.NET MVC study project
 
 ## What does this program do?
 This is a simple CRUD website that simulates a list of contacts where you can:
